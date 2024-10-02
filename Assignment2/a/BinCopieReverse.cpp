@@ -10,10 +10,10 @@ This reads and copies inverted pdf files
 int main(int argc, char** argv)
 {
     std::ifstream infile;
-    infile.open("source.pdf",std::ios::binary|std::ios::in);
+    infile.open("../source.pdf",std::ios::binary|std::ios::in);
     if (infile.is_open())
     {
-        const int fsize = std::filesystem::file_size("/home/vsevolod-ronshin/HomeAssignments/Assignment2a/source.pdf");
+        const int fsize = std::filesystem::file_size("../source.pdf");
         char *buffer = new char[fsize];
         std::ofstream outfile;
         outfile.open("temppdf.pdf",std::ios::binary|std::ios::out);
