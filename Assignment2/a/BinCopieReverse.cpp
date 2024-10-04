@@ -34,12 +34,13 @@ int main(int argc, char** argv)
             buffer[fsize - i - 1] = temp;
         }
         //
-        std::cout<<std::endl<<"output:\n";
+        std::cout<<std::endl<<"output:";
         for (int i = 0; i < fsize; i++)
         {
             std::cout<<buffer[i];
         }
         //
+	std::cout<<std::endl;
         outfile.write(buffer, fsize);
 
         delete [] buffer;
