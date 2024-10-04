@@ -5,5 +5,5 @@ BinCopieReverse.o: BinCopieReverse.cpp
 	g++ -c BinCopieReverse.cpp
 
 clean:
-	rm *.o start.app
+	rm tempbin.bin Makefile.swp *.o start.app
 

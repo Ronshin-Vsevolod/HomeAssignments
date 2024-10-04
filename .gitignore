@@ -31,4 +31,5 @@
 *.out
 *.app
 
-/home/vsevolod-ronshin/HomeAssignments/Assignment2/a/tempbin.bin
+*.swp
+/HomeAssignments/Assignment2/a/tempbin.bin
