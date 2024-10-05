@@ -31,5 +31,7 @@
 *.out
 *.app
 
+# Added
 *.swp
 /HomeAssignments/Assignment2/a/tempbin.bin
+
