@@ -63,7 +63,7 @@ public:
                         add(a / b);
                         break;
                     default:
-                        std::cout<<"Error: the program doesn't work with " << token << std::endl;
+                        std::cerr<<"Error: the program doesn't work with " << token << std::endl;
                         break;
                 }
             }
@@ -94,7 +94,7 @@ int main() {
     }
     else
     {
-        std::cout<<"Error.The file cannot be opened"<<std::endl;
+        std::cerr<<"Error.The file cannot be opened"<<std::endl;
     }
     return 0;
 }
