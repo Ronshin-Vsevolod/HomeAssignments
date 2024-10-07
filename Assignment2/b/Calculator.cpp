@@ -11,10 +11,10 @@ Calculator like “MK 61/54” (using *+/-)
 class Calc
 {
 public:
-    int* mstack = new int[128];
+    double* mstack = new double[128];
     int top=0;
 
-    void add(int newnumb)
+    void add(double newnumb)
     {
         if(top<2)
         {
@@ -22,18 +22,19 @@ public:
         }
         else
         {
-            int temp=pop();
+            std::cerr<<"Error: Too many operands entered (max 2) \n";
+            double temp=pop();
             pop();
             add(temp);
             add(newnumb);
         }
     }
-    int pop()
+    double pop()
     {
         return mstack[--top];
     }
 
-    void calculate(char* data, int* result)
+    void calculate(char* data, double* result)
     {
         std::istringstream iss(data);
         std::string token;
@@ -42,12 +43,12 @@ public:
         {
             if (isdigit(token[0]))
             {
-                add(std::stoi(token));
+                add(std::stod(token));
             }
             else
             {
-                int b = pop();
-                int a = pop();
+                double b = pop();
+                double a = pop();
                 switch (token[0])
                 {
                     case '+':
@@ -82,9 +83,8 @@ int main() {
         char* data = new char[fsize];
         source.read(data, fsize);
         source.close();
-        int result;
+        double result;
         std::cout<<data<<std::endl;
-        data[fsize] = '\0';
 
         Calc calculator;
         calculator.calculate(data, &result);
