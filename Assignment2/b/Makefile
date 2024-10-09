@@ -3,9 +3,9 @@ start: Calculator.o Calc.o
 
 Calculator.o: Calculator.cpp
 	g++ -c Calculator.cpp
-Calc.o: Calc.cpp Calculator.h
+Calc.o: Calc.cpp Calc.h
 	g++ -c Calc.cpp
 
 clean:
-	rm Makefile.swp *.o start.app
+	rm *.o start.app
 

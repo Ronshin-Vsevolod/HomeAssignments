@@ -5,7 +5,8 @@ Calculator like “MK 61/54” (using *+/-)
 #include <iostream>
 #include <fstream>
 #include <filesystem>
-#include "Calc.cpp"
+//Исходники не включают в другие файлы. Для доступа к предоставляемому API есть заголовки
+#include "Calc.h"
 
 int main() {
     std::ifstream source;
