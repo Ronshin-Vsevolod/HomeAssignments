@@ -5,7 +5,7 @@ Calculator like “MK 61/54” (using *+/-)
 #include <iostream>
 #include <fstream>
 #include <filesystem>
-#include "Calc.cpp"
+#include "Calc.h"
 
 int main() {
     std::ifstream source;
