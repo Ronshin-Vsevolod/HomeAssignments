@@ -5,23 +5,26 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 #include "Transformer.h"
 #include <string>
 
+std::string Autobot::cheer()
+{
+    return "Egegei XD";
+}
 
-void Transformer::Autobot::set_role(uint role)
+void Autobot::set_transformed()
 {
- role_=role;
-};
-std::string get_role()
+    _speed=100;
+}
+uint Autobot::get_transformed()
 {
-    return role
+    return _speed;
 }
 
 Autobot::Autobot()
 {
-    bool transformed = 1;
-    std::string role = "Assault";
+    cheer();
+    set_transformed();
 }
 Autobot::~Autobot()
 {
-    delete transformed;
-    delete role;
+
 }

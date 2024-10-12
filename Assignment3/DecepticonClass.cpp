@@ -5,24 +5,27 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 #include "Transformer.h"
 #include <string>
 
+std::string Decepticon::cheer()
+{
+    return "Yuy! 8P";
+}
 
-void Transformer::Decepticon::set_role(uint role)
+void Decepticon::set_transformed()
 {
- role_=role;
-};
-std::string get_role()
+    _speed=110;
+}
+uint Decepticon::get_transformed()
 {
-    return role;
+    return _speed;
 }
 
 Decepticon::Decepticon()
 {
-    bool transformed = 0;
-    std::string role = "Tank";
+    cheer();
+    set_transformed();
 }
 Decepticon::~Decepticon()
 {
-    delete transformed;
-    delete role;
+
 }
 

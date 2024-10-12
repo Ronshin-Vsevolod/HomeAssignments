@@ -5,31 +5,29 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 #include "Transformer.h"
 #include <string>
 
-void Transformer::set_guntype(uint guntype)
+void Weapon::set_guntype(Transformer& transformer)
 {
-    _guntype=guntype;
-};
-uint Transformer::get_guntype()
+    transformer._guntype = 1;
+}
+int Weapon::get_guntype(const Transformer& transformer) const
 {
- return _guntype;
-};
+    return transformer._guntype;
+}
 
-void Transformer::set_ammo(uint ammo)
+void Weapon::set_ammo(Transformer& transformer, int ammo)
 {
-    _ammo=ammo;
-};
-uint Transformer::get_ammo()
+    transformer._ammo = ammo;
+}
+int Weapon::get_ammo(const Transformer& transformer) const
 {
- return _ammo;
-};
+    return transformer._ammo;
+}
 
 Weapon::Weapon()
 {
-    std::string guntype = "Laser";
     int ammo = 1724;
 }
 Weapon::~Weapon()
 {
-    delete guntype;
-    delete ammo;
+
 }

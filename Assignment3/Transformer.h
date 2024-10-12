@@ -6,44 +6,59 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 #define TRANSFORMERS_H
 #include <string>
 
-class Transformer()
+class Transformer
 {
 public:
-    Transformer();
-    int speed();
-    std::string brand();
-    std::string color();
+    bool fire();
+    bool jump();
+
 private:
-    uint _guntype;
+    class Autobot;
+    class Decepticon;
+
+protected:
+    Transformer();
+    ~Transformer();
+    friend class Weapon;
+
+    uint _speed;
+    int _guntype;
     uint _ammo;
-    uint _role;
 };
 
 class Autobot: public Transformer
 {
 public:
-    bool transformed();
+    std::string cheer();
 private:
-    void set_role();
-    void get_role();
+    Autobot();
+    ~Autobot();
+    void set_transformed();
+    uint get_transformed();
 
 };
 
 class Decepticon: public Transformer
 {
 public:
-    bool transformed();
+    std::string cheer();
 private:
-    void set_role();
-    void get_role();
+    Decepticon();
+    ~Decepticon();
+    void set_transformed();
+    uint get_transformed();
 };
 
-class Weapon()
+class Weapon
 {
-    void set_guntype();
-    void get_guntype();
-    void set_ammo();
-    void get_ammo();
+public:
+    void set_guntype(Transformer& transformer);
+    int get_guntype(const Transformer& transformer) const;
+    void set_ammo(Transformer& transformer, int ammo);
+    int get_ammo(const Transformer& transformer) const;
+private:
+    Weapon();
+    ~Weapon();
 };
 
 #endif
