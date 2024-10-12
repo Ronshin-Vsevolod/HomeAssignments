@@ -3,7 +3,20 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 */
 
 #include "Transformer.h"
+#include "Autobot.h"
+#include "Decepticon.h"
 #include <string>
+
+Transformer* Transformer::createAutobot()
+{
+    return new Autobot();
+}
+
+Transformer* Transformer::createDecepticon()
+{
+    return new Decepticon();
+}
+
 bool Transformer::fire() {
  _ammo--;
  return true;
@@ -18,4 +31,5 @@ Transformer::Transformer()
 }
 Transformer::~Transformer()
 {
+
 }

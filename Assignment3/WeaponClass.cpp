@@ -2,8 +2,13 @@
 Work to explore class hierarchy.Creating characteristics of transformers.
 */
 
-#include "Transformer.h"
+#include "Weapon.h"
 #include <string>
+
+std::string overheating()
+{
+    return "overheating";
+}
 
 void Weapon::set_guntype(Transformer& transformer)
 {
@@ -26,8 +31,4 @@ int Weapon::get_ammo(const Transformer& transformer) const
 Weapon::Weapon()
 {
     int ammo = 1724;
-}
-Weapon::~Weapon()
-{
-
 }

@@ -2,12 +2,12 @@
 Work to explore class hierarchy.Creating characteristics of transformers.
 */
 
-#include "Transformer.h"
+#include "Decepticon.h"
 #include <string>
 
 std::string Decepticon::cheer()
 {
-    return "Yuy! 8P";
+    return "Ululu! 8P";
 }
 
 void Decepticon::set_transformed()
@@ -19,13 +19,18 @@ uint Decepticon::get_transformed()
     return _speed;
 }
 
+void Decepticon::set_eyes()
+{
+    _eyes=0;
+}
+int Decepticon::get_eyes()
+{
+    return _eyes;
+}
+
 Decepticon::Decepticon()
 {
     cheer();
     set_transformed();
-}
-Decepticon::~Decepticon()
-{
-
 }
 

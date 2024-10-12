@@ -4,12 +4,16 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 
 #include <iostream>
 #include "Transformer.h"
+#include "Weapon.h"
+#include "Autobot.h"
+#include "Decepticon.h"
+
 
 int main()
-{//Such declaration of objects was chosen due to the problem of multiple inheritance
-    Transformer* Optimus_Prime = new Autobot;
-    Transformer* Bumblebee = new Autobot;
-    Transformer* Megatrone = new Decepticon;
+{
+    Transformer* Optimus_Prime = Transformer::createAutobot();
+    Transformer* Bumblebee = Transformer::createAutobot();
+    Transformer* Megatrone = Transformer::createDecepticon();
 
     delete Optimus_Prime;
     delete Bumblebee;
