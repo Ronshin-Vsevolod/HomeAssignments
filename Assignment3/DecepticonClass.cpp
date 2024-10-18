@@ -5,32 +5,36 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 #include "Decepticon.h"
 #include <string>
 
-std::string Decepticon::cheer()
+Decepticon::Decepticon(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo)
+    : Transformer(_speed, "purple", _guntype, _ammo) {}
+Decepticon::Decepticon()
+    : Transformer(50, "purple", "Hands", 0)
 {
-    return "Ululu! 8P";
+    cheer();
 }
 
-void Decepticon::set_transformed()
+std::string Decepticon::cheer()
 {
-    _speed=110;
+    return "Ululu! 8P \n";
 }
-uint Decepticon::get_transformed()
+
+void Decepticon::set_speedAfterburner()
 {
-    return _speed;
+    this->_speed = 110;
 }
 
 void Decepticon::set_eyes()
 {
-    _eyes=0;
-}
-int Decepticon::get_eyes()
-{
-    return _eyes;
+    this->_eyes = "red";
 }
 
-Decepticon::Decepticon()
+void Decepticon::set_guntype()
 {
-    cheer();
-    set_transformed();
+    this->_guntype = "Energy cannon";
+}
+
+void Decepticon::set_ammo()
+{
+    this->_ammo += 10;
 }
 

@@ -5,31 +5,35 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 #include "Autobot.h"
 #include <string>
 
-std::string Autobot::cheer()
+Autobot::Autobot(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo)
+    : Transformer(_speed, _guntype, "purple", _ammo) {}
+Autobot::Autobot()
+    : Transformer(50, "purple", "Hands", 0)
 {
-    return "Egegei XD";
+    cheer();
 }
 
-void Autobot::set_transformed()
+std::string Autobot::cheer()
 {
-    _speed=100;
+    return "Egegei XD \n";
 }
-uint Autobot::get_transformed()
+
+void Autobot::set_speedAfterburner()
 {
-    return _speed;
+    this->_speed = 100;
 }
 
 void Autobot::set_eyes()
 {
-    _eyes=1;
-}
-int Autobot::get_eyes()
-{
-    return _eyes;
+    this->_eyes = "blue";
 }
 
-Autobot::Autobot()
+void Autobot::set_guntype()
 {
-    cheer();
-    set_transformed();
+    this->_guntype = "Laser";
+}
+
+void Autobot::set_ammo()
+{
+    this->_ammo += 30;
 }

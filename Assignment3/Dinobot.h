@@ -2,16 +2,16 @@
 Work to explore class hierarchy.Creating characteristics of transformers.
 */
 
-#ifndef DECEPTICON_H
-#define DECEPTICON_H
+#ifndef DINOBOT_H
+#define DINOBOT_H
 #include "Transformer.h"
 #include <string>
 
-class Decepticon: public Transformer
+class Autobot: public Transformer
 {
 public:
-    Decepticon(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo);
-    Decepticon();
+    Dinobot(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo);
+    Dinobot();
     std::string cheer();
     void set_ammo();
     void set_guntype();

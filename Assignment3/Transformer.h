@@ -9,21 +9,21 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 class Transformer
 {
 public:
-    Transformer();
+    Transformer(int _speed = 50, const std::string& _eyes = "off", const std::string& _guntype = "Hands", int _ammo = 0);
     ~Transformer();
-    static Transformer* createAutobot();
-    static Transformer* createDecepticon();
 
+    std::string get_guntype() const;
+    int get_ammo() const;
+    std::string get_eyes() const;
+    int get_speed() const;
     bool fire();
     bool jump();
 
 protected:
-    friend class Weapon; //It's not that scary, right?
-    uint _speed;
-    int _guntype;
-    uint _ammo;
-    int _eyes;
-
+    int _speed;
+    std::string _eyes;
+    std::string _guntype;
+    int _ammo;
 };
 
 #endif

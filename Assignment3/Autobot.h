@@ -10,14 +10,13 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 class Autobot: public Transformer
 {
 public:
+    Autobot(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo);
     Autobot();
     std::string cheer();
-
-private:
-    void set_transformed();
-    uint get_transformed();
+    void set_ammo();
+    void set_guntype();
+    void set_speedAfterburner();
     void set_eyes();
-    int get_eyes();
 };
 
 #endif
