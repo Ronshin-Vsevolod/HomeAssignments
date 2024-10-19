@@ -25,6 +25,7 @@ int main()
     PrintTransformerInfo(Bumblebee);
     PrintTransformerInfo(Megatron);
     PrintTransformerInfo(Sharik);
+    return 0;
 }
 
 

@@ -3,9 +3,6 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 */
 
 #include "Transformer.h"
-#include "Autobot.h"
-#include "Decepticon.h"
-#include "Dinobot.h"
 #include <string>
 
 Transformer::Transformer(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo)

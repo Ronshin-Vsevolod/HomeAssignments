@@ -2,8 +2,8 @@
 Work to explore class hierarchy.Creating characteristics of transformers.
 */
 
-#ifndef TRANSFORMERS_H
-#define TRANSFORMERS_H
+#ifndef TRANSFORMER_H
+#define TRANSFORMER_H
 #include <string>
 
 class Transformer
