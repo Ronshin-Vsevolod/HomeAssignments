@@ -1,11 +1,14 @@
 /* Ronshin Vsevolod st132572@student.spbu.ru
-Work to explore class hierarchy.Creating characteristics of transformers.
+Work to explore class hierarchy and google test.Creating characteristics of transformers.
 */
 
 #ifndef DINOBOT_H
 #define DINOBOT_H
-#include "Transformer.h"
+
 #include <string>
+
+#include "Transformer.h"
+
 
 class Dinobot: public Transformer
 {

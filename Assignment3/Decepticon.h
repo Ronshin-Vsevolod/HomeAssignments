@@ -1,12 +1,13 @@
 /* Ronshin Vsevolod st132572@student.spbu.ru
-Work to explore class hierarchy.Creating characteristics of transformers.
+Work to explore class hierarchy and google test.Creating characteristics of transformers.
 */
 
 #ifndef DECEPTICON_H
 #define DECEPTICON_H
 
-#include "Transformer.h"
 #include <string>
+
+#include "Transformer.h"
 
 class Decepticon: public Transformer
 {

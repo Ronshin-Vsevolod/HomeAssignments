@@ -1,9 +1,10 @@
 /* Ronshin Vsevolod st132572@student.spbu.ru
-Work to explore class hierarchy.Creating characteristics of transformers.
+Work to explore class hierarchy and google test.Creating characteristics of transformers.
 */
 
-#include "Autobot.h"
 #include <string>
+
+#include "Autobot.h"
 
 Autobot::Autobot(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo)
     : Transformer(_speed, _guntype, "purple", _ammo) {}

@@ -1,4 +1,9 @@
+/* Ronshin Vsevolod st132572@student.spbu.ru
+Work to explore class hierarchy and google test.Checking correctness of class hierarchy operation
+*/
+
 #include <gtest/gtest.h>
+
 #include "Transformer.h"
 #include "Autobot.h"
 #include "Decepticon.h"

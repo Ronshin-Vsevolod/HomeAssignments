@@ -1,9 +1,10 @@
 /* Ronshin Vsevolod st132572@student.spbu.ru
-Work to explore class hierarchy.Creating characteristics of transformers.
+Work to explore class hierarchy and google test.Creating characteristics of transformers.
 */
 
-#include "Decepticon.h"
 #include <string>
+
+#include "Decepticon.h"
 
 Decepticon::Decepticon(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo)
     : Transformer(_speed, "purple", _guntype, _ammo) {}

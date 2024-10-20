@@ -1,9 +1,10 @@
 /* Ronshin Vsevolod st132572@student.spbu.ru
-Work to explore class hierarchy.Creating characteristics of transformers.
+Work to explore class hierarchy and google test.Creating characteristics of transformers.
 */
 
 #ifndef TRANSFORMER_H
 #define TRANSFORMER_H
+
 #include <string>
 
 class Transformer

@@ -1,9 +1,11 @@
 /* Ronshin Vsevolod st132572@student.spbu.ru
-Work to explore class hierarchy.Creating characteristics of transformers.
+Work to explore class hierarchy and google test.Creating characteristics of transformers.
 */
 
-#include "Transformer.h"
 #include <string>
+
+#include "Transformer.h"
+
 
 Transformer::Transformer(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo)
     : _speed(_speed), _eyes(_eyes), _guntype(_guntype), _ammo(_ammo) {}
