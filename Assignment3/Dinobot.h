@@ -7,7 +7,7 @@ Work to explore class hierarchy.Creating characteristics of transformers.
 #include "Transformer.h"
 #include <string>
 
-class Autobot: public Transformer
+class Dinobot: public Transformer
 {
 public:
     Dinobot(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo);
