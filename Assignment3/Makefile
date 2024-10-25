@@ -13,7 +13,7 @@ TARGET = transformers
 
 TEST_SRC = GoogleTest.cpp
 TEST_OBJ = $(TEST_SRC:.cpp=.o)
-TEST_TARGET = gtest-run
+TEST_TARGET = gtest
 
 GTEST_LIBS = -lgtest -lgtest_main
 

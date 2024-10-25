@@ -8,5 +8,5 @@ Work to explore class hierarchy and google test.
 ##Build
 make
 ##Run
-transformers-run
-test-run
+./transformers
+./gtest
