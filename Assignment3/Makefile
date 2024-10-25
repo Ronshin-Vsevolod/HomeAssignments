@@ -1,59 +1,34 @@
-PROJECT = transformers
-
-LIBPROJECT = lib$(PROJECT).a
-
-TESTPROJECT = test-$(PROJECT)
-
 CXX = g++
+CXXFLAGS = -Wall -g -pthread
 
-A = ar
+SRCS = Transformers.cpp \
+       TransformerClass.cpp \
+       AutobotClass.cpp \
+       DecepticonClass.cpp \
+       DinobotClass.cpp
 
-AFLAGS = rsv
+OBJS = $(SRCS:.cpp=.o)
 
-CXXFLAGS = -Iinclude -std=c++17 -Wall -g -fPIC
+TARGET = transformers
 
-LDXXFLAGS = $(CXXFLAGS) -L. -l:$(LIBPROJECT)
-
-LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
-
-DEPS = $(wildcard include/*.h)
-
-SRC = $(wildcard /home/vsevolod-ronshin/HomeAssignments/Assignment3/*.cpp)
-OBJ = $(SRC:.cpp=.o)
-
-TEST_SRC = $(wildcard tests/*.cpp)
+TEST_SRC = GoogleTest.cpp
 TEST_OBJ = $(TEST_SRC:.cpp=.o)
+TEST_TARGET = gtest-run
 
-.PHONY: default
+GTEST_LIBS = -lgtest -lgtest_main
 
-default: all
+all: $(TARGET) $(TEST_TARGET)
 
-%.o: %.cpp $(DEPS)
-	$(CXX) -c -o $@ $< $(CXXFLAGS)
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-$(LIBPROJECT): $(OBJ)
-	$(A) $(AFLAGS) $@ $^
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(PROJECT): /home/vsevolod-ronshin/HomeAssignments/Assignment3/Transformers.o $(LIBPROJECT)
-	$(CXX) -o $@ /home/vsevolod-ronshin/HomeAssignments/Assignment3/Transformers.o $(LDXXFLAGS)
-
-$(TESTPROJECT): $(LIBPROJECT) $(TEST_OBJ)
-	$(CXX) -o $@ $(TEST_OBJ) $(LDGTESTFLAGS)
-
-test-run: $(TESTPROJECT)
-	./$(TESTPROJECT)
-
-transformers-run: $(PROJECT)
-	./$(PROJECT)
-
-all: $(PROJECT)
-
-.PHONY: clean
+$(TEST_TARGET): $(TEST_OBJ) TransformerClass.o AutobotClass.o DecepticonClass.o DinobotClass.o
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(GTEST_LIBS)
 
 clean:
-	rm -f $(OBJ) $(TEST_OBJ)
+	rm -f $(OBJS) $(TARGET) $(TEST_OBJ) $(TEST_TARGET)
 
-cleanall: clean
-	rm -f $(PROJECT)
-	rm -f $(LIBPROJECT)
-	rm -f $(TESTPROJECT)
+.PHONY: all clean
