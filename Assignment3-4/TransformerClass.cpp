@@ -18,15 +18,15 @@ bool Transformer::fire()
 {
     if (_ammo != 0)
     {
-    _ammo--;
+        _ammo--;
         return true;
     }
-        return false;
+    return false;
 }
 
 bool Transformer::jump()
 {
- return true;
+    return true;
 }
 
 int Transformer::get_speed() const

@@ -15,7 +15,7 @@ void PrintTransformerInfo(const Transformer& transformer)
     std::cout << "Speed: " << transformer.get_speed() << std::endl;
     std::cout << "Eyes: " << transformer.get_eyes() << std::endl;
     std::cout << "Guntype: " << transformer.get_guntype() << std::endl;
-    std::cout << "Ammo: " << transformer.get_ammo() << std::endl;
+    std::cout << "Ammo: " << transformer.get_ammo() << std::endl << std::endl;
 }
 
 int main()

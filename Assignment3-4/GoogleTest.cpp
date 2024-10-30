@@ -71,7 +71,8 @@ TEST(AutobotTest, SetSpeedAfterburnerTest)
     ASSERT_EQ(autobot.get_speed(), 100);
 }
 
-TEST(AutobotTest, SetEyesTest) {
+TEST(AutobotTest, SetEyesTest)
+{
     Autobot autobot;
     autobot.set_eyes();
     ASSERT_EQ(autobot.get_eyes(), "blue");
@@ -181,7 +182,7 @@ TEST(DinobotTest, SetAmmoTest)
 
 
 
-int main(int argc, char **argv)
+int Runner(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
