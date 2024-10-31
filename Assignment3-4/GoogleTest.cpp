@@ -3,6 +3,7 @@ Work to explore class hierarchy and google test.Checking correctness of class hi
 */
 
 #include <gtest/gtest.h>
+#include <sstream>
 
 #include "Transformer.h"
 #include "Autobot.h"
@@ -10,6 +11,7 @@ Work to explore class hierarchy and google test.Checking correctness of class hi
 #include "Dinobot.h"
 
 // Tests for class Transformer
+
 TEST(TransformerTest, GetSpeedTest)
 {
     Transformer transformer(50, "off", "Hands", 0);
@@ -49,6 +51,7 @@ TEST(TransformerTest, JumpTest)
 }
 
 // Tests for class Autobot
+
 TEST(AutobotTest, ConstructorTest)
 {
     Autobot autobot;
@@ -93,6 +96,7 @@ TEST(AutobotTest, SetAmmoTest)
 }
 
 // Tests for class Decepticon
+
 TEST(DecepticonTest, ConstructorTest)
 {
     Decepticon decepticon;
@@ -137,6 +141,7 @@ TEST(DecepticonTest, SetAmmoTest)
 }
 
 // Tests for class Dinobot
+
 TEST(DinobotTest, ConstructorTest)
 {
     Dinobot dinobot;
@@ -180,8 +185,48 @@ TEST(DinobotTest, SetAmmoTest)
     ASSERT_EQ(dinobot.get_ammo(), 1724);
 }
 
+// Tests for changed operators >, <
 
+TEST(OperatorTest, AutobotGreaterThanDecepticon)
+{
+    Autobot autobot(100);
+    Decepticon decepticon(50);
 
+    ASSERT_TRUE(autobot > decepticon);
+    ASSERT_FALSE(decepticon > autobot);
+}
+
+TEST(OperatorTest, AutobotLessThanDinobot)
+{
+    Autobot autobot(50);
+    Dinobot dinobot(100);
+
+    ASSERT_TRUE(autobot < dinobot);
+    ASSERT_FALSE(dinobot < autobot);
+}
+
+// Tests for changed operator <<
+
+/*TEST(TransformerTest, OperatorDoubleLessTest)
+{
+    Transformer examplebot(50,"off","Hands",0);
+    std::string expectedOutput = "Information: \nTransformer\n50\noff\nHands\n0\n";
+
+    std::stringstream output;
+    output << examplebot;
+
+    ASSERT_EQ(output.str(), expectedOutput);
+}
+*/
+/*
+TEST(TransformerTest, OutputStream) {
+    Transformer transformer;
+    std::ostringstream oss;
+    oss << transformer;
+    std::string expected_output = "Information:\nTransformer\n50\noff\nHands\n0\n";
+    ASSERT_EQ(oss.str(), expected_output);
+}
+*/
 int Runner(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
