@@ -7,7 +7,7 @@ Work to explore class hierarchy and google test.Creating characteristics of tran
 #include "Autobot.h"
 
 Autobot::Autobot(int _speed, const std::string& _eyes, const std::string& _guntype, int _ammo)
-    : Transformer(_speed, _guntype, "purple", _ammo) {}
+    : Transformer(_speed, _eyes, _guntype, _ammo) {}
 Autobot::Autobot()
     : Transformer(50, "purple", "Hands", 0)
 {

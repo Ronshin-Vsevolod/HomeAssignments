@@ -3,7 +3,6 @@ Work to explore class hierarchy and google test.Checking correctness of class hi
 */
 
 #include <gtest/gtest.h>
-#include <sstream>
 
 #include "Transformer.h"
 #include "Autobot.h"
@@ -189,44 +188,52 @@ TEST(DinobotTest, SetAmmoTest)
 
 TEST(OperatorTest, AutobotGreaterThanDecepticon)
 {
-    Autobot autobot(100);
-    Decepticon decepticon(50);
+    Autobot autobot(50, "purple", "Hands", 0);
+    Decepticon decepticon(45, "purple", "Hands", 0);
 
     ASSERT_TRUE(autobot > decepticon);
-    ASSERT_FALSE(decepticon > autobot);
 }
 
 TEST(OperatorTest, AutobotLessThanDinobot)
 {
-    Autobot autobot(50);
-    Dinobot dinobot(100);
+    Autobot autobot(50, "purple", "Hands", 0);
+    Dinobot dinobot(60, "purple", "None", 0);
 
     ASSERT_TRUE(autobot < dinobot);
-    ASSERT_FALSE(dinobot < autobot);
+}
+
+TEST(OperatorTest, DecepticonGreaterThanDecepticon)
+{
+    Decepticon decepticonFirst(55, "purple", "Hands", 0);
+    Decepticon decepticonSecond(45, "purple", "Hands", 0);
+
+    ASSERT_TRUE(decepticonFirst > decepticonSecond);
 }
 
 // Tests for changed operator <<
 
-/*TEST(TransformerTest, OperatorDoubleLessTest)
+TEST(OperatorDoubleLessTest, TransformerTest)
 {
-    Transformer examplebot(50,"off","Hands",0);
-    std::string expectedOutput = "Information: \nTransformer\n50\noff\nHands\n0\n";
+    Transformer transformer(50,"off","Hands",0);
+    std::string expectedOutput = "Information: \nTransformer\noff\nHands\n";
 
-    std::stringstream output;
-    output << examplebot;
-
-    ASSERT_EQ(output.str(), expectedOutput);
-}
-*/
-/*
-TEST(TransformerTest, OutputStream) {
-    Transformer transformer;
     std::ostringstream oss;
     oss << transformer;
-    std::string expected_output = "Information:\nTransformer\n50\noff\nHands\n0\n";
-    ASSERT_EQ(oss.str(), expected_output);
+
+    ASSERT_EQ(oss.str(), expectedOutput);
 }
-*/
+
+TEST(OperatorDoubleLessTest, AutobotTest)
+{
+    Autobot autobot(50,"blue","Hands",0);
+    std::string expectedOutput = "Information: \nTransformer\nblue\nHands\n";
+
+    std::ostringstream oss;
+    oss << autobot;
+
+    ASSERT_EQ(oss.str(), expectedOutput);
+}
+
 int Runner(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);

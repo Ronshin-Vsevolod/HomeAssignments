@@ -9,6 +9,8 @@ Work to explore class hierarchy and google test.Creating characteristics of tran
 
 #include "Transformer.h"
 
+class Autobot;
+
 class Decepticon: public Transformer
 {
 public:

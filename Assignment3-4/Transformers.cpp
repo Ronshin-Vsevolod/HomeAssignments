@@ -10,6 +10,7 @@ Work to explore class hierarchy and google test.Creating characteristics of tran
 #include "Decepticon.h"
 #include "Dinobot.h"
 
+/*
 std::ostream & operator <<(std::ostream & os, Transformer const & transformer)
 {
     os <<"Information: " << std::endl << "Transformer" << std::endl;
@@ -49,37 +50,7 @@ std::ostream & operator <<(std::ostream & os, Dinobot const & dinobot)
     os << dinobot.get_ammo() << std::endl;
     return os;
 }
-
-bool operator>(Autobot a, Dinobot b)
-{
-    return (a.get_speed() > b.get_speed());
-}
-
-bool operator>(Dinobot a, Decepticon b)
-{
-    return (a.get_speed() > b.get_speed());
-}
-
-bool operator>(Autobot a, Decepticon b)
-{
-    return (a.get_speed() > b.get_speed());
-}
-
-bool operator<(Autobot a, Dinobot b)
-{
-    return (a.get_speed() < b.get_speed());
-}
-
-bool operator<(Dinobot a, Decepticon b)
-{
-    return (a.get_speed() < b.get_speed());
-}
-
-bool operator<(Autobot a, Decepticon b)
-{
-    return (a.get_speed() < b.get_speed());
-}
-
+*/
 int main()
 {
     std::cout<<"The main program has started and is running successfully"<<std::endl;

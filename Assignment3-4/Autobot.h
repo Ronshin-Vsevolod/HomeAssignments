@@ -2,13 +2,15 @@
 Work to explore class hierarchy and google test.Creating characteristics of transformers.
 */
 
-
 #ifndef AUTOBOT_H
 #define AUTOBOT_H
 
 #include <string>
 
 #include "Transformer.h"
+
+class Decepticon;
+class Dinobot;
 
 class Autobot: public Transformer
 {

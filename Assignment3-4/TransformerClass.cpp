@@ -48,3 +48,19 @@ int Transformer::get_ammo() const
 {
     return _ammo;
 }
+
+bool Transformer::operator>(const Transformer& other) const
+{
+    return this->get_speed() > other.get_speed();
+}
+
+bool Transformer::operator<(const Transformer& other) const
+{
+    return this->get_speed() < other.get_speed();
+}
+
+std::ostream& operator<<(std::ostream& os, const Transformer& transformer)
+{
+    os<<"Information: " << std::endl << "Transformer" << std::endl <<transformer.get_eyes() << std::endl << transformer.get_guntype() << std::endl;
+    return os;
+}

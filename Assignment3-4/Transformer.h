@@ -6,6 +6,7 @@ Work to explore class hierarchy and google test.Creating characteristics of tran
 #define TRANSFORMER_H
 
 #include <string>
+#include <iostream>
 
 class Transformer
 {
@@ -19,6 +20,10 @@ public:
     int get_speed() const;
     bool fire();
     bool jump();
+
+    bool operator>(const Transformer& other) const;
+    bool operator<(const Transformer& other) const;
+    friend std::ostream& operator<<(std::ostream& os, const Transformer& transformer);
 
 protected:
     int _speed;
