@@ -21,6 +21,21 @@ public:
     void set_guntype();
     void set_speedAfterburner();
     void set_eyes();
+
+    std::string transform()
+    {
+        return "method: transform \nclass: Decepticon \n\n";
+    }
+
+    std::string openFire()
+    {
+        return "method: openFire \nclass: Decepticon \n\n";
+    }
+
+    std::string ulta()
+    {
+        return "method: ulta \nclass: Decepticon \n\n";
+    }
 };
 
 #endif

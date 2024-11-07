@@ -13,31 +13,31 @@ Work to explore class hierarchy and google test.Checking correctness of class hi
 
 TEST(TransformerTest, GetSpeedTest)
 {
-    Transformer transformer(50, "off", "Hands", 0);
+    Autobot transformer(50, "off", "Hands", 0);
     ASSERT_EQ(transformer.get_speed(), 50);
 }
 
 TEST(TransformerTest, GetEyesTest)
 {
-    Transformer transformer(50, "off", "Hands", 0);
+    Autobot transformer(50, "off", "Hands", 0);
     ASSERT_EQ(transformer.get_eyes(), "off");
 }
 
 TEST(TransformerTest, GetGuntypeTest)
 {
-    Transformer transformer(50, "off", "Hands", 0);
+    Autobot transformer(50, "off", "Hands", 0);
     ASSERT_EQ(transformer.get_guntype(), "Hands");
 }
 
 TEST(TransformerTest, GetAmmoTest)
 {
-    Transformer transformer(50, "off", "Hands", 0);
+    Autobot transformer(50, "off", "Hands", 0);
     ASSERT_EQ(transformer.get_ammo(), 0);
 }
 
 TEST(TransformerTest, FireTest)
 {
-    Transformer transformer(50, "off", "Hands", 1);
+    Autobot transformer(50, "off", "Hands", 1);
     ASSERT_TRUE(transformer.fire());
     ASSERT_EQ(transformer.get_ammo(), 0);
     ASSERT_FALSE(transformer.fire());
@@ -45,7 +45,7 @@ TEST(TransformerTest, FireTest)
 
 TEST(TransformerTest, JumpTest)
 {
-    Transformer transformer;
+    Autobot transformer(50, "off", "Hands", 0);
     ASSERT_TRUE(transformer.jump());
 }
 
@@ -212,16 +212,6 @@ TEST(OperatorTest, DecepticonGreaterThanDecepticon)
 
 // Tests for changed operator <<
 
-TEST(OperatorDoubleLessTest, TransformerTest)
-{
-    Transformer transformer(50,"off","Hands",0);
-    std::string expectedOutput = "Information: \nTransformer\noff\nHands\n";
-
-    std::ostringstream oss;
-    oss << transformer;
-
-    ASSERT_EQ(oss.str(), expectedOutput);
-}
 
 TEST(OperatorDoubleLessTest, AutobotTest)
 {
@@ -232,6 +222,43 @@ TEST(OperatorDoubleLessTest, AutobotTest)
     oss << autobot;
 
     ASSERT_EQ(oss.str(), expectedOutput);
+}
+
+TEST(OperatorDoubleLessTest, DecepticonTest)
+{
+    Decepticon decepticon(50,"red","Hands",0);
+    std::string expectedOutput = "Information: \nTransformer\nred\nHands\n";
+
+    std::ostringstream oss;
+    oss << decepticon;
+
+    ASSERT_EQ(oss.str(), expectedOutput);
+}
+
+// Tests for virtual methods
+
+TEST(VirtualMethodsTest, AutobotTransformTest)
+{
+    Autobot autobot;
+    std::string expectedOutput = "method: transform \nclass: Autobot \n\n"; 
+
+   ASSERT_EQ(autobot.transform(), expectedOutput);
+}
+
+TEST(VirtualMethodsTest, DecepticonOpenFireTest)
+{
+    Decepticon decepticon;
+    std::string expectedOutput = "method: openFire \nclass: Decepticon \n\n"; 
+
+   ASSERT_EQ(decepticon.openFire(), expectedOutput);
+}
+
+TEST(VirtualMethodsTest, DinobotUltaTest)
+{
+    Dinobot dinobot;
+    std::string expectedOutput = "method: ulta \nclass: Dinobot \n\n"; 
+
+   ASSERT_EQ(dinobot.ulta(), expectedOutput);
 }
 
 int Runner(int argc, char **argv)

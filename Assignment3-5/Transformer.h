@@ -25,6 +25,10 @@ public:
     bool operator<(const Transformer& other) const;
     friend std::ostream& operator<<(std::ostream& os, const Transformer& transformer);
 
+    virtual std::string transform() = 0;
+    virtual std::string openFire() = 0;
+    virtual std::string ulta() = 0;
+
 protected:
     int _speed;
     std::string _eyes;

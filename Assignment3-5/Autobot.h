@@ -22,6 +22,22 @@ public:
     void set_guntype();
     void set_speedAfterburner();
     void set_eyes();
+
+    std::string transform()
+    {
+        return "method: transform \nclass: Autobot \n\n";
+    }
+
+    std::string openFire()
+    {
+        return "method: openFire \nclass: Autobot \n\n";
+    }
+
+    std::string ulta()
+    {
+        return "method: ulta \nclass: Autobot \n\n";
+    }
+
 };
 
 #endif

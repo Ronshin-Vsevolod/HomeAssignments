@@ -13,6 +13,13 @@ Work to explore class hierarchy and google test.Creating characteristics of tran
 int main()
 {
     std::cout<<"The main program has started and is running successfully"<<std::endl;
+
+    Autobot Bumblebee;
+
+    Bumblebee.transform();
+    Bumblebee.openFire();
+    Bumblebee.ulta();
+
     return 0;
 }
 
