@@ -1,3 +1,7 @@
+/* Ronshin Vsevolod st132572@student.spbu.ru
+Assignment to study in practice the work of templates and their specializations
+*/
+
 #ifndef MAIN_H
 #define MAIN_H
 
@@ -79,7 +83,7 @@ class MClass2
 public:
     bool bar(int number, std::vector<float>& vect)
     {
-        return (!vect.empty());
+        return (vect.empty());
     }
     int c_2_1()
     {

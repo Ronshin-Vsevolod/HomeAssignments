@@ -1,3 +1,7 @@
+/* Ronshin Vsevolod st132572@student.spbu.ru
+Assignment to study in practice the work of templates and their specializations
+*/
+
 #include <gtest/gtest.h>
 
 #include "Main.h"

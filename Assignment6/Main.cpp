@@ -1,3 +1,7 @@
+/* Ronshin Vsevolod st132572@student.spbu.ru
+Assignment to study in practice the work of templates and their specializations
+*/
+
 #include "Main.h"
 
 int main(int argc, char** argv)

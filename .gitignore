@@ -37,3 +37,6 @@
 *.a
 test-transformers
 transformers
+test-template
+template
+

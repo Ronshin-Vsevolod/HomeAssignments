@@ -29,8 +29,8 @@ $(TESTPROJECT): $(TEST-OBJ)
 	$(CXX) -o $@ $(TEST-OBJ) $(LDGTESTFLAGS)
 
 test: $(TESTPROJECT)
-	./$(TESTPROJECT)
-
+	.test-/$(TESTPROJECT)
+	
 all: $(PROJECT)
 
 .PHONY: clean
